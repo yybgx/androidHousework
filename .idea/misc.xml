@@ -12,6 +12,17 @@
         <entry key="..\:/Android/Course/androidHousework-master/app/src/main/res/layout/android_home.xml" value="0.1" />
         <entry key="..\:/Android/Course/androidHousework-master/app/src/main/res/layout/login.xml" value="0.175" />
         <entry key="..\:/Android/Course/androidHousework-master/app/src/main/res/layout/register.xml" value="0.2265625" />
+        <entry key="..\:/AndroidOfMyProject/androidHousework/app/src/main/res/drawable/back.xml" value="0.161" />
+        <entry key="..\:/AndroidOfMyProject/androidHousework/app/src/main/res/drawable/notice.xml" value="0.161" />
+        <entry key="..\:/AndroidOfMyProject/androidHousework/app/src/main/res/layout/activity_course.xml" value="0.23802083333333332" />
+        <entry key="..\:/AndroidOfMyProject/androidHousework/app/src/main/res/layout/activity_main.xml" value="0.11639492753623189" />
+        <entry key="..\:/AndroidOfMyProject/androidHousework/app/src/main/res/layout/activity_person.xml" value="0.23802083333333332" />
+        <entry key="..\:/AndroidOfMyProject/androidHousework/app/src/main/res/layout/activity_teacher.xml" value="0.21875" />
+        <entry key="..\:/AndroidOfMyProject/androidHousework/app/src/main/res/layout/activity_teacher_course.xml" value="0.12952898550724637" />
+        <entry key="..\:/AndroidOfMyProject/androidHousework/app/src/main/res/layout/activity_teacher_home.xml" value="0.21875" />
+        <entry key="..\:/AndroidOfMyProject/androidHousework/app/src/main/res/layout/course_detail.xml" value="0.264" />
+        <entry key="..\:/AndroidOfMyProject/androidHousework/app/src/main/res/layout/login.xml" value="0.23802083333333332" />
+        <entry key="..\:/AndroidOfMyProject/androidHousework/app/src/main/res/layout/register.xml" value="0.234375" />
       </map>
     </option>
   </component>

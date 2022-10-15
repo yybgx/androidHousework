@@ -49,6 +49,9 @@
         <activity
             android:name=".AddCourse"
             android:launchMode="singleInstance"/>
+        <activity android:name=".CourseDetailActivity"
+
+            />
     </application>
 
 </manifest>

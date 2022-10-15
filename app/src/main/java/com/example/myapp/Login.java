@@ -1,6 +1,7 @@
 package com.example.myapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.NetworkOnMainThreadException;
 import android.util.Log;
@@ -140,7 +141,17 @@ public class Login extends BaseActivity {
             Log.d("info", dataResponseBody.toString());
             send_tip_msgs.showToast(Login.this,dataResponseBody.getMsg());
             if(dataResponseBody.getData().getRoleId()==0 &&dataResponseBody.getCode()==200){
-                startActivity(new Intent(Login.this,HomeActivity.class));
+                Intent intent=new Intent(Login.this,HomeActivity.class);
+
+
+                SharedPreferences sp=getSharedPreferences("user.xml",MODE_PRIVATE);
+                SharedPreferences.Editor editor= sp.edit();
+                String userId=dataResponseBody.getData().getId();
+                editor.putString("userId",userId);
+                editor.commit();
+
+
+                startActivity(intent);
             }
             else if(dataResponseBody.getData().getRoleId()==1&&dataResponseBody.getCode()==200){
                 startActivity(new Intent(Login.this, TeacherHomeActivity.class));

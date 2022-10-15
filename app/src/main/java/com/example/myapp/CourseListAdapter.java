@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -71,7 +72,10 @@ public class CourseListAdapter
                     public void onClick(View view) {
 
                         Toast.makeText(view.getContext(),"哈哈哈哈哈哈",Toast.LENGTH_LONG).show();
-                        Intent intent=new Intent(view.getContext(),Login.class);
+
+
+                        Intent intent=new Intent(view.getContext(),CourseDetailActivity.class);
+                       intent.putExtra("courseId",holder.courseId.getText().toString());
                         view.getContext().startActivity(intent);
 
                     }
