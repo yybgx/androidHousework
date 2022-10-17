@@ -140,21 +140,39 @@ public class Login extends BaseActivity {
             ResponseBody dataResponseBody = gson.fromJson(body,jsonType);
             Log.d("info", dataResponseBody.toString());
             send_tip_msgs.showToast(Login.this,dataResponseBody.getMsg());
-            if(dataResponseBody.getData().getRoleId()==0 &&dataResponseBody.getCode()==200){
+
+            if(dataResponseBody.getCode()==200 && dataResponseBody.getData().getRoleId()==0){
+//                Intent intent=new Intent(Login.this,HomeActivity.class);
                 Intent intent=new Intent(Login.this,HomeActivity.class);
 
-
-                SharedPreferences sp=getSharedPreferences("user.xml",MODE_PRIVATE);
-                SharedPreferences.Editor editor= sp.edit();
-                String userId=dataResponseBody.getData().getId();
-                editor.putString("userId",userId);
-                editor.commit();
-
-
+//                SharedPreferences sp=getSharedPreferences("user.xml",MODE_PRIVATE);
+//                SharedPreferences.Editor editor= sp.edit();
+//                String userId=dataResponseBody.getData().getId();
+//                editor.putString("userId",userId);
+//                editor.commit();
+                if(dataResponseBody.getData()!=null) {
+                    tools.info_deal.saveUserInfo(Login.this, "user.xml", "Id", dataResponseBody.getData().getId());
+                    tools.info_deal.saveUserInfo(Login.this, "user.xml", "Avatar", dataResponseBody.getData().getAvatar());
+                    tools.info_deal.saveUserInfo(Login.this, "user.xml", "CreateTime", dataResponseBody.getData().getCreateTime());
+                    tools.info_deal.saveUserInfo(Login.this, "user.xml", "InSchoolTime", dataResponseBody.getData().getInSchoolTime());
+                    tools.info_deal.saveUserInfo(Login.this, "user.xml", "CollegeName", dataResponseBody.getData().getCollegeName());
+                    tools.info_deal.saveUserInfo(Login.this, "user.xml", "LastUpdateTime", dataResponseBody.getData().getLastUpdateTime());
+                    tools.info_deal.saveUserInfo(Login.this, "user.xml", "AppKey", dataResponseBody.getData().getAppKey());
+                    tools.info_deal.saveUserInfo(Login.this, "user.xml", "Email", dataResponseBody.getData().getEmail());
+                    tools.info_deal.saveUserInfo(Login.this, "user.xml", "Gender", dataResponseBody.getData().getGender());
+                    tools.info_deal.saveUserInfo(Login.this, "user.xml", "IdNumber", dataResponseBody.getData().getIdNumber());
+                    tools.info_deal.saveUserInfo(Login.this, "user.xml", "Phone", dataResponseBody.getData().getPhone());
+                    tools.info_deal.saveUserInfo(Login.this, "user.xml", "RealName", dataResponseBody.getData().getRealName());
+                    tools.info_deal.saveUserInfo(Login.this, "user.xml", "UserName", dataResponseBody.getData().getUserName());
+                    tools.info_deal.saveUserInfo(Login.this, "user.xml", "IdNumber", Integer.toString(dataResponseBody.getData().getRoleId()));
+                }
                 startActivity(intent);
             }
-            else if(dataResponseBody.getData().getRoleId()==1&&dataResponseBody.getCode()==200){
+            else if(dataResponseBody.getCode()==200 && dataResponseBody.getData().getRoleId()==1){
                 startActivity(new Intent(Login.this, TeacherHomeActivity.class));
+
+            }else{
+                send_tip_msgs.showToast(Login.this,"登录失败");
             }
         }
     };
@@ -313,13 +331,11 @@ public class Login extends BaseActivity {
         public void setLastUpdateTime(String lastUpdateTime) {
             this.lastUpdateTime = lastUpdateTime;
         }
-
         private String email;
         private String avatar;
         private String inSchoolTime;
         private String createTime;
         private String lastUpdateTime;
-
 
     }
 }

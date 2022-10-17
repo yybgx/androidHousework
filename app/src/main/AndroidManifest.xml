@@ -6,6 +6,11 @@
     <!--获取网络权限-->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <!--相机权限-->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -49,9 +54,11 @@
         <activity
             android:name=".AddCourse"
             android:launchMode="singleInstance"/>
-        <activity android:name=".CourseDetailActivity"
-
-            />
+        <activity android:name=".CourseDetailActivity" />
+        android:launchMode="singleInstance" />
+        <activity
+            android:name=".EditImformation"
+            android:launchMode="singleInstance"/>
     </application>
 
 </manifest>

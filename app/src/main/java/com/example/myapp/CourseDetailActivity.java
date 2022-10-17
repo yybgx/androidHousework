@@ -8,6 +8,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.NetworkOnMainThreadException;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -39,6 +40,7 @@ public class CourseDetailActivity  extends BaseActivity {
     private MyImageView coursePhoto;
     private TextView createTime;
     private TextView endTime;
+    private ImageView back;
 //后面还要定义一个是否选课的变量，这个变量决定那个按钮是选课还是退课。
 
     private TextView introduce;
@@ -73,7 +75,7 @@ public class CourseDetailActivity  extends BaseActivity {
         getCourseDetail();
         setContentView(R.layout.course_detail);
         initView();
-getCourseDetail();
+        getCourseDetail();
 //        setEvent();
     }
     private void initView(){
@@ -88,8 +90,15 @@ getCourseDetail();
 
         button=findViewById(R.id.myButton);//加入课程按钮
         imageView=findViewById(R.id.attendance);//那个铃铛，用来跳转到签到列表
+        back=findViewById(R.id.back);
 //        Intent intent = getIntent();
 //        tools.msgs_class_to_class.get_msgs(intent,"id",id);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CourseDetailActivity.this,HomeActivity.class));
+            }
+        });
     }
     private void setEvent(){
            // getCourseDetail();

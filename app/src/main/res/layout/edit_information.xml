@@ -125,7 +125,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginRight="5dp"
-                            android:text="xxx"
+                            android:text="张三"
                             android:textColor="@color/black"
                             tools:ignore="TouchTargetSizeCheck"></EditText>
                     </LinearLayout>
@@ -170,7 +170,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginRight="5dp"
-                            android:text="xxx"
+                            android:text="桂林电子科技大学"
                             android:textColor="@color/black"
                             tools:ignore="TouchTargetSizeCheck"></EditText>
                     </LinearLayout>
@@ -207,7 +207,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginRight="5dp"
-                            android:text="xxx"
+                            android:text="李四"
                             android:textColor="@color/black"
                             tools:ignore="TouchTargetSizeCheck"></EditText>
                     </LinearLayout>
@@ -229,7 +229,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="10dp"
-                            android:text="学号"
+                            android:text="学号/工号"
                             android:textColor="@color/black"
                             android:textSize="15dp"></TextView>
                     </LinearLayout>
@@ -240,11 +240,11 @@
                         android:gravity="right">
 
                         <EditText
-                            android:id="@+id/student_Number"
+                            android:id="@+id/id_Number"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginRight="5dp"
-                            android:text="xxx"
+                            android:text="200030xxxx"
                             android:textColor="@color/black"
                             tools:ignore="TouchTargetSizeCheck"></EditText>
                     </LinearLayout>
@@ -281,7 +281,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginRight="5dp"
-                            android:text="xxx"
+                            android:text="男"
                             android:textColor="@color/black"
                             tools:ignore="TouchTargetSizeCheck"></EditText>
                     </LinearLayout>
@@ -318,7 +318,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginRight="5dp"
-                            android:text="xxx"
+                            android:text="20000101"
                             android:textColor="@color/black"
                             tools:ignore="TouchTargetSizeCheck"></EditText>
                     </LinearLayout>
@@ -355,7 +355,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginRight="5dp"
-                            android:text="xxx"
+                            android:text="2000301830.com"
                             android:textColor="@color/black"
                             tools:ignore="TouchTargetSizeCheck"></EditText>
                     </LinearLayout>
@@ -391,7 +391,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginRight="5dp"
-                            android:text="xxx"
+                            android:text="123456789"
                             android:textColor="@color/black"
                             tools:ignore="TouchTargetSizeCheck"></EditText>
                     </LinearLayout>

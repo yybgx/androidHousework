@@ -13,8 +13,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="@color/teal_200"
+            android:layout_height="180dp"
+            android:background="@color/purple_700"
             android:orientation="vertical">
 
             <LinearLayout
@@ -22,6 +22,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:id="@+id/back"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_margin="5dp"
@@ -102,7 +103,6 @@
                     android:layout_marginRight="20dp">
 
                     <TextView
-                        android:id="@+id/introduce"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@color/white"
@@ -120,8 +120,7 @@
                         android:layout_height="match_parent"
                         android:text="开课时间"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
-                        android:background="@drawable/btn_selector"></TextView>
+                        android:textSize="20dp"></TextView>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -133,8 +132,7 @@
                         android:layout_height="match_parent"
                         android:text="结课时间"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
-                        android:background="@drawable/btn_selector"></TextView>
+                        android:textSize="20dp"></TextView>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -154,6 +152,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/introduce"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="dadadadada eadahfhfjajdjajdlkwjoadadadada"

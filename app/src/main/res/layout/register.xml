@@ -2,8 +2,9 @@
 <!--登录界面,用LinearLayout-->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/Login"
-    android:background="@color/teal_200"
+    android:background="@color/purple_700"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
@@ -41,12 +42,13 @@
             android:layout_width="270dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="0dp"
+            android:hint="账号"
             android:paddingLeft="10dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:layout_marginTop="0dp"
-            android:hint="账号"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="320dp"
@@ -66,11 +68,12 @@
             android:layout_gravity="center"
             android:layout_marginTop="0dp"
             android:hint="输入密码"
-            android:textColor="@color/white"
+            android:inputType="textPassword"
             android:paddingLeft="10dp"
+            android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:textSize="20sp"
-            android:inputType="textPassword" />
+            tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="320dp"

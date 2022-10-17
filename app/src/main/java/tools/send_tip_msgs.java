@@ -1,7 +1,6 @@
 package tools;
 
 import android.app.Activity;
-import android.util.Log;
 import android.widget.Toast;
 //用于在回调函数里输出提示函数
 public class send_tip_msgs {

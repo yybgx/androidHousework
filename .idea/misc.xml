@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Android studio/androidHousework/app/src/main/res/drawable/btn_normal.xml" value="0.175" />
         <entry key="..\:/Android studio/androidHousework/app/src/main/res/drawable/btn_pressed.xml" value="0.175" />
+        <entry key="..\:/Android studio/androidHousework/app/src/main/res/drawable/btn_selector.xml" value="0.2135" />
         <entry key="..\:/Android studio/androidHousework/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.1025" />
         <entry key="..\:/Android studio/androidHousework/app/src/main/res/drawable/ic_baseline_lens_24.xml" value="0.1135" />
         <entry key="..\:/Android studio/androidHousework/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1135" />
@@ -16,7 +17,11 @@
         <entry key="..\:/Android studio/androidHousework/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Android studio/androidHousework/app/src/main/res/drawable/padding_allline_back.xml" value="0.1" />
         <entry key="..\:/Android studio/androidHousework/app/src/main/res/drawable/padding_line.xml" value="0.138" />
+        <entry key="..\:/Android studio/androidHousework/app/src/main/res/drawable/text_normal.xml" value="0.154" />
+        <entry key="..\:/Android studio/androidHousework/app/src/main/res/drawable/text_pressed.xml" value="0.1565" />
+        <entry key="..\:/Android studio/androidHousework/app/src/main/res/drawable/text_selecor.xml" value="0.1565" />
         <entry key="..\:/Android studio/androidHousework/app/src/main/res/layout/activity_add_course.xml" value="0.24947916666666667" />
+        <entry key="..\:/Android studio/androidHousework/app/src/main/res/layout/activity_checkinitem.xml" value="0.176" />
         <entry key="..\:/Android studio/androidHousework/app/src/main/res/layout/activity_course.xml" value="0.24947916666666667" />
         <entry key="..\:/Android studio/androidHousework/app/src/main/res/layout/activity_main.xml" value="0.24947916666666667" />
         <entry key="..\:/Android studio/androidHousework/app/src/main/res/layout/activity_mycourse.xml" value="0.24947916666666667" />
@@ -24,8 +29,10 @@
         <entry key="..\:/Android studio/androidHousework/app/src/main/res/layout/activity_teacher.xml" value="0.136" />
         <entry key="..\:/Android studio/androidHousework/app/src/main/res/layout/activity_teacher_course.xml" value="0.24947916666666667" />
         <entry key="..\:/Android studio/androidHousework/app/src/main/res/layout/activity_teacher_home.xml" value="0.24947916666666667" />
+        <entry key="..\:/Android studio/androidHousework/app/src/main/res/layout/activiyt_checkinlist.xml" value="0.264" />
         <entry key="..\:/Android studio/androidHousework/app/src/main/res/layout/android_home.xml" value="0.24947916666666667" />
-        <entry key="..\:/Android studio/androidHousework/app/src/main/res/layout/edit_information.xml" value="0.264" />
+        <entry key="..\:/Android studio/androidHousework/app/src/main/res/layout/course_detail.xml" value="0.264" />
+        <entry key="..\:/Android studio/androidHousework/app/src/main/res/layout/edit_information.xml" value="0.1" />
         <entry key="..\:/Android studio/androidHousework/app/src/main/res/layout/login.xml" value="0.24947916666666667" />
         <entry key="..\:/Android studio/androidHousework/app/src/main/res/layout/register.xml" value="0.24947916666666667" />
         <entry key="..\:/Android studio/androidHousework/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />

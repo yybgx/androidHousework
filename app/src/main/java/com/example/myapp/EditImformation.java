@@ -1,5 +1,6 @@
 package com.example.myapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.NetworkOnMainThreadException;
@@ -20,6 +21,7 @@ import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.Map;
 
+import base.BaseActivity;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Headers;
@@ -29,13 +31,14 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class EditImformation extends AppCompatActivity {
+public class EditImformation extends BaseActivity {
     private ImageView avatar;
     private ImageView back;
+    private int id;
     private EditText username;
     private EditText collegename;
     private EditText realname;
-    private EditText student_Number;
+    private EditText idNumber;
     private EditText gender;
     private EditText inschooltime;
     private EditText email;
@@ -49,6 +52,7 @@ public class EditImformation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_information);
         inintView();
+        initInformation();
         initEvent();
     }
 
@@ -56,20 +60,19 @@ public class EditImformation extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int number=9;//参数数量
                 //头像
-                String Str_username = username.getText().toString();
-                String Str_school = collegename.getText().toString();
-                String Str_real_name = realname.getText().toString();
-                String Str_student_Number = student_Number.getText().toString();
-                String Str_gender = gender.getText().toString();
-                String Str_inschooltimete = inschooltime.getText().toString();
-                String Str_email = email.getText().toString();
-                String Str_phone = phone.getText().toString();
-                int int_inschooltimete =  Integer.parseInt(Str_inschooltimete);
-                boolean bool_gender = true;
-                if(Str_gender.equals("女")){
-                    bool_gender = false;
-                }
+                String[] information = new String[number];
+                information[0] = username.getText().toString();
+                information[1] = collegename.getText().toString();
+                information[2] = realname.getText().toString();
+                information[3] = idNumber.getText().toString();
+                information[4] = gender.getText().toString();
+                information[5] = inschooltime.getText().toString();
+                information[6] = email.getText().toString();
+                information[7] = phone.getText().toString();
+                information[8] = tools.info_deal.getUserInfo(EditImformation.this,"user.xml","Id");
+                editInformation(information);
             }
         });
         back.setOnClickListener(new View.OnClickListener() {
@@ -85,15 +88,48 @@ public class EditImformation extends AppCompatActivity {
         username = findViewById(R.id.userName);
         collegename = findViewById(R.id.collegeName);
         realname = findViewById(R.id.realName);
-        student_Number = findViewById(R.id.student_Number);
-        gender = findViewById(R.id.cv_user_head);
+        idNumber = findViewById(R.id.id_Number);
+        gender = findViewById(R.id.gender);
         inschooltime = findViewById(R.id.inSchoolTime);
         email = findViewById(R.id.email);
         phone = findViewById(R.id.Phone);
         button = findViewById(R.id.edit_Information_button);
         back = findViewById(R.id.back);
     }
-    private void editImformation(){
+    private void initInformation(){
+        String  str_avater = tools.info_deal.getUserInfo(EditImformation.this,"user.xml","UserName");
+        String str_id = tools.info_deal.getUserInfo(EditImformation.this,"user.xml","Id");;
+        String str_username = tools.info_deal.getUserInfo(EditImformation.this,"user.xml","UserName");
+        String str_collegename = tools.info_deal.getUserInfo(EditImformation.this,"user.xml","CollegeName");
+        String str_realname = tools.info_deal.getUserInfo(EditImformation.this,"user.xml","RealName");
+        String str_idNumber = tools.info_deal.getUserInfo(EditImformation.this,"user.xml","IdNumber");
+        String str_gender = tools.info_deal.getUserInfo(EditImformation.this,"user.xml","Gender");
+        String str_inschooltime = tools.info_deal.getUserInfo(EditImformation.this, "user.xml","InSchoolTime");
+        String str_email = tools.info_deal.getUserInfo(EditImformation.this,"user.xml","Email");
+        String str_phone = tools.info_deal.getUserInfo(EditImformation.this,"user.xml","Phone");
+
+        if(tools.string_deal.isNotEmpty(str_username))
+        username.setText(tools.info_deal.getUserInfo(EditImformation.this,"user.xml","UserName"));
+        if(tools.string_deal.isNotEmpty(str_collegename))
+        collegename.setText(tools.info_deal.getUserInfo(EditImformation.this,"user.xml","CollegeName"));
+        if(tools.string_deal.isNotEmpty(str_realname))
+        realname.setText(tools.info_deal.getUserInfo(EditImformation.this,"user.xml","RealName"));
+        if(tools.string_deal.isNotEmpty(str_idNumber))
+        idNumber.setText(tools.info_deal.getUserInfo(EditImformation.this,"user.xml","IdNumber"));
+        if(tools.string_deal.isNotEmpty(str_gender))
+        if("flase".equals(tools.info_deal.getUserInfo(EditImformation.this,"user.xml","Gender"))){
+            gender.setText("女");
+        }else{
+            gender.setText("男");
+        }
+        if(tools.string_deal.isNotEmpty(str_inschooltime))
+        inschooltime.setText(tools.info_deal.getUserInfo(EditImformation.this, "user.xml","InSchoolTime"));
+        if(tools.string_deal.isNotEmpty(str_email))
+        email.setText(tools.info_deal.getUserInfo(EditImformation.this,"user.xml","Email"));
+        if(tools.string_deal.isNotEmpty(str_phone))
+        phone.setText(tools.info_deal.getUserInfo(EditImformation.this,"user.xml","Phone"));
+    }
+    private void editInformation(String[] information){
         new Thread(() -> {
 
             // url路径
@@ -102,24 +138,28 @@ public class EditImformation extends AppCompatActivity {
             // 请求头
             Headers headers = new Headers.Builder()
                     .add("Accept", "application/json, text/plain, */*")
-                    .add("appId", "cfa7b08b01fd4c0b90f40f94798cfc2d")
-                    .add("appSecret", "17942d0b56a59da3e4d2abbb11b71e98f8b12")
+                    .add("appId", "1c53542a2bfa43b2a690ad8b8e987301")
+                    .add("appSecret", "03998a873144910df439eb0691b841601a601")
                     .add("Content-Type", "application/json")
                     .build();
 
             // 请求体
             // PS.用户也可以选择自定义一个实体类，然后使用类似fastjson的工具获取json串
             Map<String, Object> bodyMap = new HashMap<>();
-            bodyMap.put("collegeName", "string");
-            bodyMap.put("realName", "string");
-            bodyMap.put("gender", true);
-            bodyMap.put("phone", "string");
-            bodyMap.put("avatar", "string");
-            bodyMap.put("id", 0);
-            bodyMap.put("idNumber", 0);
-            bodyMap.put("userName", "string");
-            bodyMap.put("email", "string");
-            bodyMap.put("inSchoolTime", 0);
+            bodyMap.put("collegeName", information[0]);
+            bodyMap.put("realName", information[2]);
+            boolean bool_gender = true;
+            if(information[4].equals("女")){
+                bool_gender = false;
+            }
+            bodyMap.put("gender", bool_gender);
+            bodyMap.put("phone", information[7]);
+            bodyMap.put("avatar", "https://guet-lab.oss-cn-hangzhou.aliyuncs.com/api/2022/10/13/e465c552-720a-400e-8056-30f158b86914.jpg");
+            bodyMap.put("id", Integer.parseInt(information[8]));
+            bodyMap.put("idNumber", Integer.parseInt(information[3]));
+            bodyMap.put("userName", information[0]);
+            bodyMap.put("email", information[6]);
+            bodyMap.put("inSchoolTime", Integer.parseInt(information[5]));
             // 将Map转换为字符串类型加入请求体中
             String body = gson.toJson(bodyMap);
 
@@ -160,6 +200,9 @@ public class EditImformation extends AppCompatActivity {
             Log.d("info", body);
             // 解析json串到自己封装的状态
             ResponseBody<Object> dataResponseBody = gson.fromJson(body,jsonType);
+            if(dataResponseBody.getCode()==200){
+                tools.send_tip_msgs.showToast(EditImformation.this,"修改成功");
+            }
             Log.d("info", dataResponseBody.toString());
         }
     };

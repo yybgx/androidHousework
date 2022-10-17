@@ -71,6 +71,7 @@ public class Register extends BaseActivity {
                 permission = 1;
                 teacher_permission.setEnabled(false);
                 student_permission.setEnabled(true);
+                //Log.d("tecaher_permission","1");
             }
         });
         student_permission.setOnClickListener(new View.OnClickListener() {
@@ -79,6 +80,7 @@ public class Register extends BaseActivity {
                 permission = 0;
                 teacher_permission.setEnabled(true);
                 student_permission.setEnabled(false);
+                //Log.d("student_permission","2");
             }
         });
         register.setOnClickListener(new View.OnClickListener() {
@@ -117,8 +119,8 @@ public class Register extends BaseActivity {
             // 请求头
             Headers headers = new Headers.Builder()
                     .add("Accept", "application/json, text/plain, */*")
-                    .add("appId", "cfa7b08b01fd4c0b90f40f94798cfc2d")
-                    .add("appSecret", "17942d0b56a59da3e4d2abbb11b71e98f8b12")
+                    .add("appId", "1c53542a2bfa43b2a690ad8b8e987301")
+                    .add("appSecret", "03998a873144910df439eb0691b841601a601")
                     .add("Content-Type", "application/json")
                     .build();
 
